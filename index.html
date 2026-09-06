@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社NICOLY｜通信業界に特化した人材の育成と現場運営</title>
+<meta name="description" content="株式会社NICOLYは、通信業界に特化した人材の採用・育成・現場管理を行う会社です。携帯催事、外販、店舗支援、イベント運営まで一貫して対応します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141726;
+  --body:#4A5063;
+  --mute:#7C8397;
+  --line:#E3E7EF;
+  --wash:#F5F7FB;
+  --red:#DA030C;
+  --blue:#0047A6;
+  --purple:#2B136A;
+  --grad:linear-gradient(120deg,#DA030C 0%,#2B136A 52%,#0047A6 100%);
+  --jp:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --num:"Archivo","Noto Sans JP",sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#fff;color:var(--body);
+  font-family:var(--jp);font-size:16px;line-height:1.9;
+  font-feature-settings:"palt";-webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+ul{list-style:none;padding:0}
+
+/* 左端のブランドレール */
+.rail{position:fixed;left:0;top:0;bottom:0;width:5px;background:var(--grad);z-index:60}
+@media(max-width:900px){.rail{width:3px}}
+
+.wrap{max-width:1120px;margin:0 auto;padding-inline:var(--pad)}
+
+/* ---------- ヘッダー ---------- */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand svg{width:34px;height:34px}
+.brand b{font-family:var(--num);font-size:22px;letter-spacing:.06em;color:var(--ink);font-weight:700}
+nav{margin-left:auto;display:flex;align-items:center;gap:30px}
+nav a{
+  text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink);
+  padding:6px 0;border-bottom:2px solid transparent;
+}
+nav a:hover{border-bottom-color:var(--line)}
+nav a[aria-current="page"]{border-bottom-color:var(--red)}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:15px;
+  padding:14px 30px;border-radius:2px;line-height:1.4;
+}
+.btn-fill{background:var(--ink);color:#fff}
+.btn-fill:hover{background:var(--purple)}
+.btn-grad{background:var(--grad);color:#fff}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--purple)}
+nav .btn{padding:11px 22px;font-size:14px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);
+  border-radius:2px;padding:9px 13px;font-family:var(--jp);font-size:14px;cursor:pointer;color:var(--ink)}
+@media(max-width:900px){
+  nav{position:fixed;inset:76px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;gap:0;padding:8px var(--pad) 24px;display:none}
+  nav.open{display:flex}
+  nav a{padding:16px 0;border-bottom:1px solid var(--line)}
+  nav .btn{margin-top:18px;text-align:center;padding:15px}
+  .menu-btn{display:block}
+}
+
+/* ---------- 汎用セクション ---------- */
+section{padding-block:clamp(64px,9vw,116px)}
+section.wash{background:var(--wash)}
+.eyebrow{
+  font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:var(--red);margin-bottom:14px;
+}
+h2{
+  font-size:clamp(25px,3.4vw,38px);line-height:1.5;font-weight:700;color:var(--ink);
+  letter-spacing:.01em;
+}
+h3{font-size:19px;line-height:1.6;font-weight:700;color:var(--ink)}
+.lede{margin-top:20px;max-width:44em;font-size:16.5px}
+.head-2col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+@media(max-width:820px){.head-2col{grid-template-columns:1fr;align-items:start;gap:18px}}
+
+/* ---------- ヒーロー ---------- */
+.hero{position:relative;overflow:hidden;padding-block:clamp(56px,8vw,104px) clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{
+  font-size:clamp(30px,5.4vw,58px);line-height:1.35;font-weight:900;color:var(--ink);
+  letter-spacing:-.005em;
+}
+.hero h1 .rule{display:block;width:64px;height:5px;background:var(--grad);margin-bottom:28px}
+.hero p{margin-top:26px;font-size:clamp(15.5px,1.6vw,17.5px);max-width:32em}
+.hero-cta{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
+.hero-mark{position:relative}
+.hero-mark svg{width:100%;height:auto}
+.hero-note{
+  margin-top:20px;font-size:13px;color:var(--mute);border-left:2px solid var(--line);padding-left:14px;
+}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-mark{max-width:230px;order:-1}
+}
+
+/* ---------- 実績の数字 ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:34px 28px 30px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat dt{font-size:14px;color:var(--body);font-weight:500}
+.stat dd{margin:12px 0 0;font-family:var(--num);font-weight:700;font-size:clamp(34px,4.6vw,52px);
+  line-height:1.05;color:var(--ink);letter-spacing:-.02em}
+.stat dd .u{font-size:.42em;font-weight:600;margin-left:.28em;color:var(--body)}
+.stat dd.todo{font-family:var(--jp);font-size:24px;color:var(--red);font-weight:700}
+.stat small{display:block;margin-top:10px;font-size:12.5px;color:var(--mute);line-height:1.7}
+@media(max-width:820px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat{padding:26px 20px}
+  .stat:first-child,.stat:nth-child(3){padding-left:0}
+  .stat:nth-child(2n){border-right:0}
+}
+@media(max-width:460px){
+  .stats{grid-template-columns:1fr}
+  .stat{padding-left:0;border-right:0}
+}
+
+/* ---------- 課題リスト ---------- */
+.pains{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.pains li{
+  padding:22px 0 22px 40px;border-bottom:1px solid var(--line);position:relative;
+  font-size:16px;color:var(--ink);font-weight:500;line-height:1.75;
+}
+.pains li::before{
+  content:"";position:absolute;left:6px;top:32px;width:16px;height:2px;background:var(--red);
+}
+@media(max-width:820px){.pains{grid-template-columns:1fr;gap:0}}
+
+/* ---------- 4本柱 ---------- */
+.pillars{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.pillar{padding:0 26px;border-left:1px solid var(--line)}
+.pillar:first-child{padding-left:0;border-left:0}
+.pillar .n{font-family:var(--num);font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.08em}
+.pillar h3{margin-top:12px;font-size:20px}
+.pillar p{margin-top:12px;font-size:14.5px;line-height:1.85}
+@media(max-width:820px){
+  .pillars{grid-template-columns:1fr;gap:0}
+  .pillar{padding:22px 0;border-left:0;border-top:1px solid var(--line)}
+  .pillar:first-child{border-top:0;padding-top:0}
+}
+
+/* ---------- サービス一覧 ---------- */
+.svc{margin-top:48px;border-top:1px solid var(--line)}
+.svc-row{
+  display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px 48px;
+  padding:32px 0;border-bottom:1px solid var(--line);align-items:start;
+}
+.svc-row h3{font-size:21px;display:flex;align-items:baseline;gap:14px}
+.svc-row h3 span{font-family:var(--num);font-size:13px;font-weight:600;color:var(--mute)}
+.svc-row p{font-size:15px}
+.tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{
+  font-size:12.5px;padding:6px 13px;border:1px solid var(--line);border-radius:999px;
+  color:var(--body);background:#fff;
+}
+@media(max-width:820px){.svc-row{grid-template-columns:1fr;gap:14px;padding:26px 0}}
+
+/* ---------- 強み ---------- */
+.str{margin-top:56px;display:grid;gap:56px}
+.str-item{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:36px}
+.str-item h3{font-size:clamp(20px,2.4vw,26px);line-height:1.55}
+.str-item h3 em{
+  display:block;font-style:normal;font-family:var(--num);font-size:13px;font-weight:600;
+  letter-spacing:.1em;color:var(--red);margin-bottom:12px;
+}
+.str-item p{font-size:15.5px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+.compare>div{background:#fff;padding:22px}
+.compare h4{margin:0 0 12px;font-size:13.5px;font-weight:700;color:var(--mute)}
+.compare .own h4{color:var(--blue)}
+.compare li{font-size:14px;line-height:1.8;padding-left:16px;position:relative;margin-bottom:8px}
+.compare li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:50%;background:var(--line)}
+.compare .own li::before{background:var(--blue)}
+.compare li:last-child{margin-bottom:0}
+@media(max-width:820px){.str-item{grid-template-columns:1fr;gap:18px}.compare{grid-template-columns:1fr}}
+
+/* ---------- 育成サイクル ---------- */
+.cycle{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cycle div{background:#fff;padding:20px}
+.cycle b{display:block;font-family:var(--num);font-size:12.5px;color:var(--purple);font-weight:700;letter-spacing:.08em}
+.cycle strong{display:block;margin-top:8px;font-size:15.5px;color:var(--ink)}
+.cycle p{margin-top:7px;font-size:13.5px;line-height:1.75}
+@media(max-width:640px){.cycle{grid-template-columns:1fr}}
+
+/* ---------- 導入フロー ---------- */
+.flow{margin-top:48px;counter-reset:f}
+.flow li{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:24px;padding:26px 0;
+  border-top:1px solid var(--line);
+}
+.flow li:last-child{border-bottom:1px solid var(--line)}
+.flow .fn{font-family:var(--num);font-size:15px;font-weight:700;color:var(--red);padding-top:3px}
+.flow h3{font-size:18px}
+.flow p{margin-top:8px;font-size:14.5px}
+.flow li.key{background:linear-gradient(90deg,rgba(218,3,12,.04),rgba(0,71,166,.04));
+  padding-inline:24px;margin-inline:-24px}
+@media(max-width:640px){.flow li{grid-template-columns:44px minmax(0,1fr);gap:14px}}
+
+/* ---------- CTA帯 ---------- */
+.cta{background:var(--grad);color:#fff;padding-block:clamp(56px,7vw,88px)}
+.cta h2{color:#fff;font-size:clamp(24px,3.4vw,36px)}
+.cta p{margin-top:18px;color:rgba(255,255,255,.9);max-width:38em;font-size:16px}
+.cta-actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cta-tel{font-family:var(--num);font-size:22px;font-weight:700;color:#fff;text-decoration:none}
+
+/* ---------- テーブル ---------- */
+.table{margin-top:40px;width:100%;border-collapse:collapse}
+.table th,.table td{text-align:left;padding:20px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.table th{width:210px;font-weight:700;color:var(--ink);padding-right:24px}
+@media(max-width:640px){
+  .table th,.table td{display:block;width:auto;padding:0}
+  .table th{padding-top:20px}
+  .table td{padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .table th{border-bottom:0}
+}
+.todo{color:var(--red);font-weight:700}
+
+/* ---------- 役割 ---------- */
+.roles{margin-top:44px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.roles>div{background:#fff;padding:28px}
+.roles h3{font-size:18px}
+.roles p{margin-top:10px;font-size:14.5px}
+@media(max-width:720px){.roles{grid-template-columns:1fr}}
+
+/* ---------- フォーム ---------- */
+.form{margin-top:40px;max-width:640px}
+.field{margin-bottom:24px}
+.field label{display:block;font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:9px}
+.field .req{color:var(--red);font-size:12px;margin-left:8px;font-weight:700}
+.field input,.field textarea,.field select{
+  width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:2px;
+  font-family:var(--jp);font-size:15.5px;color:var(--ink);background:#fff;
+}
+.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
+.form-note{font-size:13px;color:var(--mute);margin-top:-8px;margin-bottom:26px;line-height:1.8}
+.formmsg{margin-top:18px;padding:16px 18px;background:var(--wash);border-left:3px solid var(--blue);font-size:14.5px;display:none}
+.formmsg.show{display:block}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:40px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  padding:22px 40px 22px 0;font-size:16px;font-weight:700;color:var(--ink);cursor:pointer;
+  list-style:none;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";position:absolute;right:4px;top:22px;color:var(--red);font-weight:700}
+.faq details[open] summary::after{content:"−"}
+.faq p{padding:0 0 24px;font-size:15px;max-width:52em}
+
+/* ---------- フッター ---------- */
+footer{background:var(--ink);color:rgba(255,255,255,.72);padding-block:56px 34px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,1fr));gap:36px}
+footer .brand b{color:#fff}
+footer p{margin-top:16px;font-size:13.5px;line-height:1.9;max-width:26em}
+footer h4{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.06em;margin-bottom:14px}
+footer nav{margin:0;display:block}
+footer li{margin-bottom:11px}
+footer a{text-decoration:none;color:rgba(255,255,255,.72)}
+footer a:hover{color:#fff}
+.copy{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+  font-family:var(--num);font-size:12px;color:rgba(255,255,255,.5)}
+@media(max-width:720px){.fgrid{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- ページ切替 ---------- */
+.page{display:none}
+.page.active{display:block}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:99;background:#fff;padding:12px 18px;border:2px solid var(--blue)}
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.22,.7,.3,1) forwards}
+  .reveal:nth-child(2){animation-delay:.08s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="rail" aria-hidden="true"></div>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DA030C"/><stop offset=".52" stop-color="#2B136A"/><stop offset="1" stop-color="#0047A6"/>
+    </linearGradient>
+    <linearGradient id="nw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 200 200">
+      <circle cx="66" cy="70" r="15"/><circle cx="134" cy="70" r="15"/>
+      <path d="M30,96 A70,70 0 0,0 170,96 A112,112 0 0,1 30,96 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#/" data-link>
+      <svg viewBox="0 0 200 200" role="img" aria-label="NICOLY"><use href="#mark" fill="url(#ng)"/></svg>
+      <b>NICOLY</b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainnav">メニュー</button>
+    <nav id="mainnav">
+      <a href="#/" data-link>ホーム</a>
+      <a href="#/service" data-link>サービス</a>
+      <a href="#/about" data-link>会社概要</a>
+      <a href="#/contact" data-link>お問い合わせ</a>
+      <a href="#/contact" class="btn btn-fill" data-link>相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== ホーム ===================== -->
+<div class="page" id="p-home">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <h1><span class="rule"></span>人材供給ではなく、<br>現場戦力をつくる。</h1>
+        <p>NICOLYは、通信業界に特化した人材会社です。採用して送り出すところで終わらせず、育成と現場管理まで担い、店舗の数字が動くところまで責任を持ちます。</p>
+        <div class="hero-cta">
+          <a href="#/contact" class="btn btn-grad" data-link>まず相談する</a>
+          <a href="#/service" class="btn btn-line" data-link>サービスを見る</a>
+        </div>
+        <p class="hero-note">1名・1現場からのご依頼にも対応しています。</p>
+      </div>
+      <div class="hero-mark reveal" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><use href="#mark" fill="url(#ng)"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <p class="eyebrow">数字で見るNICOLY</p>
+      <h2>実績は、数で示します。</h2>
+      <dl class="stats">
+        <div class="stat"><dt>累計稼働現場数</dt><dd class="todo">要入力</dd><small>例：1,200現場／2021年〜</small></div>
+        <div class="stat"><dt>登録スタッフ数</dt><dd class="todo">要入力</dd><small>例：180名</small></div>
+        <div class="stat"><dt>対応エリア</dt><dd class="todo">要入力</dd><small>例：関東を中心に全国</small></div>
+        <div class="stat"><dt>継続ご発注率</dt><dd class="todo">要入力</dd><small>例：92%</small></div>
+      </dl>
+      <p class="lede" style="font-size:14px;color:var(--mute)">取引先企業名は守秘義務のため掲載しておりません。個別のご相談時に、業態・規模の近い事例をご説明いたします。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">課題</p>
+      <h2>こんな状態になっていませんか。</h2>
+      <ul class="pains">
+        <li>現場ごとに人が入れ替わり、説明を毎回やり直している</li>
+        <li>通信商材の知識がなく、店舗側の教育負担が大きい</li>
+        <li>繁忙期・催事の人手が読めず、直前に慌てて調整している</li>
+        <li>人数は揃ったのに、獲得件数が想定に届かない</li>
+        <li>現場のマネジメントまで自社では手が回らない</li>
+        <li>誰に何を任せられるのか、発注の基準が決めきれない</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <div class="head-2col">
+        <div>
+          <p class="eyebrow">NICOLYの答え</p>
+          <h2>採用から成果まで、<br>4つをひと続きで担います。</h2>
+        </div>
+        <p class="lede">人を出す会社と、教える会社と、現場を回す会社を別々に探す必要はありません。分断していた工程をひとつにすることで、店舗側の管理コストが下がります。</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="n">01</div><h3>人材</h3><p>通信業界での就業を志望する人材を、自社で採用・登録しています。</p></div>
+        <div class="pillar"><div class="n">02</div><h3>教育</h3><p>NICOLY ACADEMYで、商材知識と接客を現場に出る前に固めます。</p></div>
+        <div class="pillar"><div class="n">03</div><h3>現場管理</h3><p>ディレクターが配置と進行を管理し、店舗の指示負担を減らします。</p></div>
+        <div class="pillar"><div class="n">04</div><h3>成果</h3><p>稼働後に数字を振り返り、次の現場の人選と配置に反映します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head-2col">
+        <div>
+          <p class="eyebrow">サービス</p>
+          <h2>催事・外販・店舗・イベント・育成。</h2>
+        </div>
+        <p class="lede">必要な機能だけを切り出してご利用いただけます。全部をまとめて任せる必要はありません。</p>
+      </div>
+      <div class="svc">
+        <div class="svc-row">
+          <h3><span>01</span>携帯催事支援</h3>
+          <div><p>商業施設や量販店での催事に、立ち上げから撤収まで対応します。会場の動線に合わせた人員配置まで含めてご提案します。</p>
+          <ul class="tags"><li>商業施設での催事</li><li>量販店イベント</li><li>ショップ店頭催事</li></ul></div>
+        </div>
+        <div class="svc-row">
+          <h3><span>02</span>外販支援</h3>
+          <div><p>声かけから着座誘導、トスアップまでを担当します。獲得の手前の工程を任せることで、店舗スタッフはクロージングに集中できます。</p>
+          <ul class="tags"><li>キャッチ</li><li>ヒアリング・着座誘導</li><li>予約番号取得・トスアップ</li></ul></div>
+        </div>
+        <div class="svc-row">
+          <h3><span>03</span>店舗支援</h3>
+          <div><p>店内ヘルパーとして、料金相談から契約対応、関連商材のご提案までを行います。繁忙期のみのスポット利用も可能です。</p>
+          <ul class="tags"><li>店内ヘルパー</li><li>料金相談・携帯販売</li><li>PI獲得・関連商材</li></ul></div>
+        </div>
+        <div class="svc-row">
+          <h3><span>04</span>イベント運営</h3>
+          <div><p>人員配置、チーム編成、当日のディレクションまでを引き受けます。現場の責任者を置くので、店舗側の指示出しが不要になります。</p>
+          <ul class="tags"><li>人員配置</li><li>チーム編成</li><li>現場管理・ディレクション</li></ul></div>
+        </div>
+        <div class="svc-row">
+          <h3><span>05</span>人材育成</h3>
+          <div><p>NICOLY ACADEMYの育成プログラムを提供します。自社スタッフ向けの研修としてご利用いただくことも可能です。</p>
+          <ul class="tags"><li>NICOLY ACADEMY</li><li>ロープレ・現場同行</li><li>振り返りとフィードバック</li></ul></div>
+        </div>
+      </div>
+      <div class="hero-cta"><a href="#/service" class="btn btn-line" data-link>サービスの詳細を見る</a></div>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <p class="eyebrow">強み</p>
+      <h2>任せていただくための、3つの根拠。</h2>
+      <div class="str">
+
+        <div class="str-item">
+          <h3><em>強み 01</em>通信業界の現場を知る人材を、自社で育てています。</h3>
+          <div>
+            <p>一般的なイベントスタッフ会社との一番の違いは、現場理解の深さです。商材と料金の仕組みを理解した状態で入るため、店舗側の説明工数がかかりません。</p>
+            <div class="compare">
+              <div>
+                <h4>一般的な人材・イベント会社</h4>
+                <ul>
+                  <li>現場ごとに人が入れ替わり、説明から毎回やり直し</li>
+                  <li>通信の商材知識がなく、店舗側の教育負担が大きい</li>
+                  <li>人数を満たすことが目的になりやすい</li>
+                </ul>
+              </div>
+              <div class="own">
+                <h4>NICOLY</h4>
+                <ul>
+                  <li>通信業界に特化し、同じ基準で育てた人材が入る</li>
+                  <li>商材知識を事前研修で固めてから現場に立つ</li>
+                  <li>獲得と接客品質を評価対象として管理する</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="str-item">
+          <h3><em>強み 02</em>NICOLY ACADEMYで、採用から育成までを仕組み化。</h3>
+          <div>
+            <p>研修は一度きりのものではなく、稼働と振り返りを回し続ける仕組みとして設計しています。現場で起きたことが、次の研修内容に反映されます。</p>
+            <div class="cycle">
+              <div><b>STEP 1</b><strong>採用・登録</strong><p>志望動機と適性を確認したうえで登録します。</p></div>
+              <div><b>STEP 2</b><strong>基礎研修</strong><p>通信商材、料金プラン、接客の基本を学びます。</p></div>
+              <div><b>STEP 3</b><strong>ロールプレイング</strong><p>実際の会話を想定した反復練習を行います。</p></div>
+              <div><b>STEP 4</b><strong>現場同行</strong><p>先輩スタッフに同行し、現場の流れを覚えます。</p></div>
+              <div><b>STEP 5</b><strong>独り立ち</strong><p>基準を満たしたスタッフから単独稼働に移ります。</p></div>
+              <div><b>STEP 6</b><strong>振り返り</strong><p>結果を共有し、次の研修と配置に反映します。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="str-item">
+          <h3><em>強み 03</em>評価とランクで、現場に合う人を選んで配置します。</h3>
+          <div>
+            <p>獲得実績、接客品質、勤怠、現場からの評価をもとにスタッフをランク分けしています。案件の難易度と目的に合わせて人選するため、人数合わせの配置になりません。</p>
+            <ul class="tags" style="margin-top:22px">
+              <li>獲得実績</li><li>接客品質</li><li>勤怠・姿勢</li><li>現場からの評価</li><li>リーダー適性</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head-2col">
+        <div>
+          <p class="eyebrow">導入の流れ</p>
+          <h2>ご相談から稼働まで、最短で対応します。</h2>
+        </div>
+        <p class="lede">ご契約前に費用が発生することはありません。まずは現場の状況をお聞かせください。</p>
+      </div>
+      <ol class="flow">
+        <li><div class="fn">01</div><div><h3>お問い合わせ</h3><p>フォームまたはお電話でご連絡ください。日程を調整いたします。</p></div></li>
+        <li><div class="fn">02</div><div><h3>現場ヒアリング</h3><p>現場の課題、必要な人数、期間、目標とする数字を伺います。</p></div></li>
+        <li><div class="fn">03</div><div><h3>ご提案・お見積り</h3><p>人員構成と配置案、費用をご提示します。ここまで無料です。</p></div></li>
+        <li class="key"><div class="fn">04</div><div><h3>ご契約</h3><p>条件を確認のうえ、契約を締結します。1名・1現場からご契約いただけます。</p></div></li>
+        <li><div class="fn">05</div><div><h3>人員手配・事前研修</h3><p>案件に合わせて人選し、現場に合わせた事前研修を行います。</p></div></li>
+        <li><div class="fn">06</div><div><h3>稼働・振り返り</h3><p>稼働後に結果を共有し、次回に向けた改善点をご報告します。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>まずは1名・1現場から。</h2>
+      <p>いきなり大きな体制を組む必要はありません。1つの現場で結果を見ていただいてから、範囲を広げていただければと考えています。</p>
+      <div class="cta-actions">
+        <a href="#/contact" class="btn btn-white" data-link>相談する</a>
+        <a href="tel:" class="cta-tel todo" style="color:#fff">TEL：要入力</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== サービス ===================== -->
+<div class="page" id="p-service">
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">サービス</p>
+      <h2>現場に必要な機能を、必要な分だけ。</h2>
+      <p class="lede">NICOLYは、通信業界の現場に人材を提供し、育成と管理まで行います。以下のサービスは、単独でも組み合わせでもご依頼いただけます。</p>
+
+      <div class="svc">
+        <div class="svc-row">
+          <h3><span>01</span>携帯催事支援</h3>
+          <div>
+            <p>商業施設や量販店で行う催事の運営を支援します。会場の広さと動線に合わせて必要な人数を割り出し、立ち上げから撤収までを担当します。短期の週末催事から、長期の常設催事まで対応可能です。</p>
+            <ul class="tags"><li>商業施設での催事</li><li>量販店イベント</li><li>ショップ店頭催事</li><li>週末スポット</li><li>長期常設</li></ul>
+          </div>
+        </div>
+        <div class="svc-row">
+          <h3><span>02</span>外販支援</h3>
+          <div>
+            <p>店頭前や施設内での声かけから、ヒアリング、着座誘導、予約番号の取得、担当者へのトスアップまでを担います。獲得の手前の工程を切り出すことで、店舗スタッフはクロージングに専念できます。</p>
+            <ul class="tags"><li>キャッチ</li><li>ヒアリング</li><li>着座誘導</li><li>予約番号取得</li><li>トスアップ</li></ul>
+          </div>
+        </div>
+        <div class="svc-row">
+          <h3><span>03</span>店舗支援</h3>
+          <div>
+            <p>店内ヘルパーとして、料金相談、機種変更・新規契約の対応、関連商材のご提案までを行います。繁忙期のみ、特定曜日のみといったスポット利用にも対応します。</p>
+            <ul class="tags"><li>店内ヘルパー</li><li>料金相談</li><li>携帯販売</li><li>PI獲得</li><li>関連商材提案</li></ul>
+          </div>
+        </div>
+        <div class="svc-row">
+          <h3><span>04</span>イベント運営</h3>
+          <div>
+            <p>人員の配置設計、チーム編成、当日のディレクションまでを引き受けます。現場に責任者を置くため、店舗側で個々のスタッフに指示を出す必要がありません。</p>
+            <ul class="tags"><li>人員配置</li><li>チーム編成</li><li>現場ディレクション</li><li>進行管理</li></ul>
+          </div>
+        </div>
+        <div class="svc-row">
+          <h3><span>05</span>人材育成</h3>
+          <div>
+            <p>NICOLY ACADEMYで実施している育成プログラムを、貴社スタッフ向けの研修として提供します。座学だけでなく、ロールプレイングと現場同行を組み合わせた実践形式です。</p>
+            <ul class="tags"><li>NICOLY ACADEMY</li><li>ロールプレイング</li><li>現場同行</li><li>フィードバック</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <p class="eyebrow">対応可能な人材</p>
+      <h2>役割を決めてご発注いただけます。</h2>
+      <p class="lede">「何人ほしいか」ではなく「どの役割がほしいか」でご相談いただくと、より現場に合う人選ができます。</p>
+      <div class="roles">
+        <div><h3>外販スタッフ</h3><p>声かけとヒアリングを担当します。人通りの多い現場や、来店数を増やしたい場面に向いています。</p></div>
+        <div><h3>販売スタッフ</h3><p>料金説明から契約手続きまでを担当します。店内の対応力を底上げしたい場面に向いています。</p></div>
+        <div><h3>店内ヘルパー</h3><p>受付、待ち時間対応、関連商材の提案などを担当します。繁忙期の店内運営を支えます。</p></div>
+        <div><h3>現場ディレクター</h3><p>チームの管理と進行を担当します。複数名を配置する現場や、店舗側の管理工数を削りたい場合に配置します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">よくあるご相談</p>
+      <h2>ご発注の前に、多くいただく質問です。</h2>
+      <div class="faq">
+        <details><summary>1名だけ、1日だけでも依頼できますか。</summary><p>可能です。まず1つの現場でお試しいただき、結果を見てから範囲を広げていただく形をおすすめしています。</p></details>
+        <details><summary>急な欠員が出たときにも対応してもらえますか。</summary><p>登録スタッフの稼働状況によりますが、可能な限り調整いたします。まずはお電話でご連絡ください。</p></details>
+        <details><summary>費用はどのように決まりますか。</summary><p>役割、稼働日数、人数、エリアによって変わります。ヒアリングのうえ、お見積りをご提示します。ご契約前に費用は発生しません。</p></details>
+        <details><summary>対応できるエリアを教えてください。</summary><p><span class="todo">要入力</span>（対応エリアの範囲、遠方の場合の交通費・宿泊費の扱いを記載してください）</p></details>
+        <details><summary>稼働後の報告はありますか。</summary><p>稼働結果を共有し、次回に向けた改善点をご報告します。報告の頻度と形式はご相談のうえ決定します。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>役割が決まっていなくても、大丈夫です。</h2>
+      <p>現場の状況を伺ったうえで、必要な役割と人数をこちらからご提案します。</p>
+      <div class="cta-actions"><a href="#/contact" class="btn btn-white" data-link>相談する</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== 会社概要 ===================== -->
+<div class="page" id="p-about">
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">NICOLYについて</p>
+      <h2>人が変われば、現場の数字は変わる。</h2>
+      <p class="lede">NICOLYは、通信業界の現場に立つ人を育てる会社です。人材を送り出すことをゴールにせず、その人が現場で成果を出せる状態になるまで関わり続けます。店舗にとって「毎回説明が必要な外部スタッフ」ではなく、「そのまま任せられる戦力」であることを目指しています。</p>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <p class="eyebrow">NICOLY ACADEMY</p>
+      <h2>教育は、一度きりでは終わらせません。</h2>
+      <p class="lede">採用してから独り立ちするまでを6つの段階に分け、現場で起きたことを次の研修に戻すサイクルとして運用しています。</p>
+      <div class="cycle" style="margin-top:40px">
+        <div><b>STEP 1</b><strong>採用・登録</strong><p>志望動機と適性を確認したうえで登録します。</p></div>
+        <div><b>STEP 2</b><strong>基礎研修</strong><p>通信商材、料金プラン、接客の基本を学びます。</p></div>
+        <div><b>STEP 3</b><strong>ロールプレイング</strong><p>実際の会話を想定した反復練習を行います。</p></div>
+        <div><b>STEP 4</b><strong>現場同行</strong><p>先輩スタッフに同行し、現場の流れを覚えます。</p></div>
+        <div><b>STEP 5</b><strong>独り立ち</strong><p>基準を満たしたスタッフから単独稼働に移ります。</p></div>
+        <div><b>STEP 6</b><strong>振り返り</strong><p>結果を共有し、次の研修と配置に反映します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">会社概要</p>
+      <h2>会社概要</h2>
+      <table class="table">
+        <tbody>
+          <tr><th>商号</th><td>株式会社NICOLY（NICOLY Co., Ltd.）</td></tr>
+          <tr><th>代表者</th><td>代表取締役　森部 太陽 <span class="todo">※表記をご確認ください</span></td></tr>
+          <tr><th>設立</th><td class="todo">要入力</td></tr>
+          <tr><th>資本金</th><td class="todo">要入力</td></tr>
+          <tr><th>所在地</th><td class="todo">要入力</td></tr>
+          <tr><th>電話番号</th><td class="todo">要入力</td></tr>
+          <tr><th>メールアドレス</th><td class="todo">要入力</td></tr>
+          <tr><th>事業内容</th><td>通信業界に特化した人材の採用・育成／携帯催事支援／外販支援／店舗支援／イベント運営／人材育成研修</td></tr>
+          <tr><th>許認可</th><td class="todo">要入力（労働者派遣事業許可番号・有料職業紹介事業許可番号など、取得済みの場合は必ず記載してください）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>会社の話より、現場の話をさせてください。</h2>
+      <p>いま困っている現場のことを伺えれば、そこから具体的にご提案します。</p>
+      <div class="cta-actions"><a href="#/contact" class="btn btn-white" data-link>相談する</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== お問い合わせ ===================== -->
+<div class="page" id="p-contact">
+  <section>
+    <div class="wrap">
+      <div class="head-2col">
+        <div>
+          <p class="eyebrow">お問い合わせ</p>
+          <h2>現場の状況を、そのままお聞かせください。</h2>
+        </div>
+        <p class="lede">内容が固まっていない段階でも構いません。ご相談から見積りまで費用は発生しません。<br>お急ぎの場合はお電話が確実です。</p>
+      </div>
+
+      <table class="table" style="max-width:640px">
+        <tbody>
+          <tr><th>電話</th><td class="todo">要入力（受付時間もあわせて記載してください）</td></tr>
+          <tr><th>メール</th><td class="todo">要入力</td></tr>
+        </tbody>
+      </table>
+
+      <div class="form">
+        <div class="field">
+          <label for="f-company">会社名・店舗名<span class="req">必須</span></label>
+          <input id="f-company" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-name">ご担当者名<span class="req">必須</span></label>
+          <input id="f-name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-tel">電話番号</label>
+          <input id="f-tel" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-mail">メールアドレス<span class="req">必須</span></label>
+          <input id="f-mail" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-type">ご相談内容</label>
+          <select id="f-type">
+            <option>携帯催事支援</option>
+            <option>外販支援</option>
+            <option>店舗支援</option>
+            <option>イベント運営</option>
+            <option>人材育成</option>
+            <option>まだ決まっていない・相談したい</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-body">現場の状況・ご要望<span class="req">必須</span></label>
+          <textarea id="f-body" rows="6" placeholder="例：週末の催事で外販スタッフを3名お願いしたい。開催は来月から3か月間。"></textarea>
+        </div>
+        <p class="form-note">送信いただいた内容は、ご相談への回答以外の目的では使用しません。</p>
+        <button class="btn btn-grad" id="sendBtn" type="button" style="border:0;cursor:pointer;font-family:var(--jp)">送信する</button>
+        <div class="formmsg" id="formmsg">このフォームはデモ表示です。実際に送信するには、送信先メールアドレスの設定が必要です（<span class="todo">要入力</span>）。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wash">
+    <div class="wrap">
+      <p class="eyebrow">ご相談後の流れ</p>
+      <h2>お問い合わせから稼働まで。</h2>
+      <ol class="flow" style="margin-top:36px">
+        <li><div class="fn">01</div><div><h3>ご連絡</h3><p>フォームまたはお電話でご連絡ください。<span class="todo">要入力</span>営業日以内にご返信します。</p></div></li>
+        <li><div class="fn">02</div><div><h3>ヒアリング</h3><p>訪問またはオンラインで、現場の課題と必要な体制を伺います。</p></div></li>
+        <li><div class="fn">03</div><div><h3>ご提案・お見積り</h3><p>人員構成と費用をご提示します。ここまで費用は発生しません。</p></div></li>
+        <li><div class="fn">04</div><div><h3>ご契約・稼働</h3><p>ご契約後、人選と事前研修を行い、現場に配置します。</p></div></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#/" data-link style="text-decoration:none">
+          <svg viewBox="0 0 200 200" aria-hidden="true" style="width:32px;height:32px"><use href="#mark" fill="#fff"/></svg>
+          <b>NICOLY</b>
+        </a>
+        <p>株式会社NICOLY<br>通信業界に特化した人材の採用・育成・現場運営を行っています。</p>
+      </div>
+      <div>
+        <h4>サイトメニュー</h4>
+        <nav><ul>
+          <li><a href="#/" data-link>ホーム</a></li>
+          <li><a href="#/service" data-link>サービス</a></li>
+          <li><a href="#/about" data-link>会社概要</a></li>
+          <li><a href="#/contact" data-link>お問い合わせ</a></li>
+        </ul></nav>
+      </div>
+      <div>
+        <h4>お問い合わせ</h4>
+        <ul>
+          <li class="todo">TEL：要入力</li>
+          <li class="todo">MAIL：要入力</li>
+          <li class="todo">所在地：要入力</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 NICOLY Co., Ltd.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var routes={'#/':'p-home','#/service':'p-service','#/about':'p-about','#/contact':'p-contact'};
+  var titles={
+    '#/':'株式会社NICOLY｜通信業界に特化した人材の育成と現場運営',
+    '#/service':'サービス｜株式会社NICOLY',
+    '#/about':'会社概要｜株式会社NICOLY',
+    '#/contact':'お問い合わせ｜株式会社NICOLY'
+  };
+  var nav=document.getElementById('mainnav');
+  var btn=document.getElementById('menuBtn');
+
+  function render(){
+    var h=location.hash||'#/';
+    if(!routes[h]){h='#/';}
+    Object.keys(routes).forEach(function(k){
+      document.getElementById(routes[k]).classList.toggle('active',k===h);
+    });
+    document.querySelectorAll('nav a[data-link]').forEach(function(a){
+      if(a.getAttribute('href')===h && !a.classList.contains('btn')){a.setAttribute('aria-current','page');}
+      else{a.removeAttribute('aria-current');}
+    });
+    document.title=titles[h];
+    nav.classList.remove('open');btn.setAttribute('aria-expanded','false');
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',render);
+  btn.addEventListener('click',function(){
+    var o=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',o?'true':'false');
+  });
+  var sb=document.getElementById('sendBtn');
+  if(sb){sb.addEventListener('click',function(){document.getElementById('formmsg').classList.add('show');});}
+  render();
+})();
+</script>
+</body>
+</html>
